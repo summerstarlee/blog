@@ -1,0 +1,1 @@
+# 使用 commit message 自动关闭 issues

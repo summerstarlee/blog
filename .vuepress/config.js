@@ -21,7 +21,7 @@ module.exports = {
       {
         text: 'git',
         link: '/git/'
-      }
+      },
     ], 
     sidebar: {
       '/engineering/': [
@@ -31,7 +31,8 @@ module.exports = {
         'babel'
       ],
       '/git/': [
-        'tag'
+        'tag',
+        'closeIssues'
       ]
     }
   }
