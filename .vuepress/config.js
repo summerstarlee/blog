@@ -7,6 +7,9 @@ module.exports = {
   head: [
       ['link', { rel: 'icon', href: '/android-icon-36x36.png' }]
   ], 
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
     repo: 'summerstarlee/blog', 
     lastUpdated: 'Last Updated', 
@@ -22,6 +25,10 @@ module.exports = {
         text: 'git',
         link: '/git/'
       },
+      {
+        text: '服务器运维',
+        link: '/server/'
+      }
     ], 
     sidebar: {
       '/engineering/': [
@@ -33,6 +40,10 @@ module.exports = {
       '/git/': [
         'tag',
         'closeIssues'
+      ],
+      '/server/': [
+        '',
+        'server-link'
       ]
     }
   }
