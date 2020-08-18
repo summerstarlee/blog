@@ -1,4 +1,7 @@
 {
+  "name": "starlee-blog",
+  "version": "1.3.0",
+  "description": "Welcome Star lee's blog",
   "devDependencies": {
     "vuepress": "^1.5.3"
   },
