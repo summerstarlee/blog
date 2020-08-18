@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Eslint 配合 prettier 使用</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/blog/android-icon-36x36.png">
+    <meta name="description" content="Welcome Star Lee's blog !">
+    <link rel="preload" href="/blog/assets/css/0.styles.5dc057b1.css" as="style"><link rel="preload" href="/blog/assets/js/app.b33b7185.js" as="script"><link rel="preload" href="/blog/assets/js/2.c490c8e3.js" as="script"><link rel="preload" href="/blog/assets/js/8.ad52a45e.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.434b6728.js"><link rel="prefetch" href="/blog/assets/js/11.6d53dcee.js"><link rel="prefetch" href="/blog/assets/js/12.859e9a22.js"><link rel="prefetch" href="/blog/assets/js/3.8099ba9f.js"><link rel="prefetch" href="/blog/assets/js/4.3b6a7e49.js"><link rel="prefetch" href="/blog/assets/js/5.af75ae8c.js"><link rel="prefetch" href="/blog/assets/js/6.9bcca469.js"><link rel="prefetch" href="/blog/assets/js/7.620fd06e.js"><link rel="prefetch" href="/blog/assets/js/9.67e2c32b.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.5dc057b1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/engineering/" class="nav-link router-link-active">
+  前端工程化
+</a></div><div class="nav-item"><a href="/blog/git/" class="nav-link">
+  git
+</a></div> <a href="https://github.com/summerstarlee/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/engineering/" class="nav-link router-link-active">
+  前端工程化
+</a></div><div class="nav-item"><a href="/blog/git/" class="nav-link">
+  git
+</a></div> <a href="https://github.com/summerstarlee/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/blog/engineering/" aria-current="page" class="sidebar-link">前端基础建设</a></li><li><a href="/blog/engineering/git-commit.html" class="sidebar-link">项目中的 git message 规范</a></li><li><a href="/blog/engineering/vs-eslint.html" class="sidebar-link">ESlint 基础</a></li><li><a href="/blog/engineering/babel.html" class="sidebar-link">Babel 教程</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="eslint-配合-prettier-使用"><a href="#eslint-配合-prettier-使用" class="header-anchor">#</a> Eslint 配合 prettier 使用</h1> <ul><li>prettier 是一个对代码风格进行格式化的工具。</li> <li>prettier 和 eslint 并没有直接关联, 如果要在 eslint 中使用 prettier 的风格规范， 就需使用 eslint 的插件 <code>eslint-plugin-prettier</code>, 这个插件作用是添加 prettier 作为 eslint 的规则配置, 把不符合 prettier 规范的代码进行提示。</li> <li>eslint 默认可能会和 prettier 规范有冲突, 所以需要使用 eslint-config-prettier 插件关闭 eslint 中可能和 prettier 有冲突的规则。</li></ul> <ol><li>安装依赖</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> eslint prettier eslint-plugin-prettier eslint-config-prettier -D
+</code></pre></div><ol start="2"><li>添加 eslint 配置</li></ol> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;prettier&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;extends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;eslint:recommended&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;prettier&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;rules&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;prettier/prettier&quot;</span><span class="token operator">:</span> <span class="token string">&quot;error&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><ol><li>eslint 支持插件名(plugins)和 extents 名字省略前面的 'eslint-plugin-' 和 'eslint-config-'</li> <li>需要在 rules 中显示添加 <code>&quot;prettier/prettier&quot;: &quot;error&quot;</code>, 表示被 prettier 标记的地方抛出错误信息。</li></ol></blockquote> <ol start="3"><li>更改 prettier 默认风格规范</li></ol> <p>添加 .prettierrc 文件可以覆盖掉 prettier 默认的规范。</p> <p>常见的默认规则：</p> <div class="language- extra-class"><pre class="language-text"><code>printWidth: 80              // 一行最多字符数
+tabWidth: 2                 // 使用2个空格缩进
+useTabs: false              // 是否使用tab 作为缩进，默认使用 空格作为缩进         
+semi: true                  // 行尾要有分号
+singleQuote: false          // 使用单引号
+trailingComma: es5          // 行尾不需要加逗号
+noBracketSpacing: true      // 大括号的首位需要加空格
+arrowParens: always         // 箭头函数，只有一个参数的时候，也需要括号 
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/18/2020, 6:39:26 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.b33b7185.js" defer></script><script src="/blog/assets/js/2.c490c8e3.js" defer></script><script src="/blog/assets/js/8.ad52a45e.js" defer></script>
+  </body>
+</html>
