@@ -39,7 +39,8 @@ module.exports = {
       ],
       '/git/': [
         'tag',
-        'closeIssues'
+        'closeIssues',
+        'repassword'
       ],
       '/server/': [
         '',
