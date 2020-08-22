@@ -22,6 +22,10 @@ module.exports = {
         link: '/engineering/',
       },
       {
+        text: 'Javascript',
+        link: '/javascript/'
+      },
+      {
         text: 'git',
         link: '/git/'
       },
@@ -45,6 +49,9 @@ module.exports = {
       '/server/': [
         '',
         'server-link'
+      ],
+      '/javascript/': [
+        'this'
       ]
     }
   }
