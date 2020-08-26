@@ -23,7 +23,23 @@ module.exports = {
       },
       {
         text: 'Javascript',
-        link: '/javascript/'
+        items: [
+          {
+            text: '你不知道的js 读后感', 
+            items: [
+              {
+                text: '上卷',
+                link: '/dontKnowJs/'
+              }
+            ]
+          },
+          {
+            text: '基础语法',
+            link: '/javascript/'
+          }
+        ],
+        link: '/javascript/',
+
       },
       {
         text: 'git',
@@ -52,6 +68,9 @@ module.exports = {
       ],
       '/javascript/': [
         'this'
+      ],
+      '/dontKnowJs/': [
+        ""
       ]
     }
   }
