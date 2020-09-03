@@ -56,7 +56,8 @@ module.exports = {
         'git-commit',
         'vs-eslint',
         'babel',
-        'prettier'
+        'prettier',
+        'npm_change_registry'
       ],
       '/git/': [
         'tag',
