@@ -66,7 +66,8 @@ module.exports = {
       ],
       '/server/': [
         '',
-        'server-link'
+        'server-link',
+        'window-kill-port'
       ],
       '/javascript/': [
         'this'
