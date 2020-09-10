@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>windows 查看端口并 kill 某个进程</title>
+    <title>Vue 源码中数据响应实现</title>
     <meta name="generator" content="VuePress 1.5.4">
     <link rel="icon" href="/blog/android-icon-36x36.png">
     <meta name="description" content="Welcome Star Lee's blog !">
-    <link rel="preload" href="/blog/assets/css/0.styles.5608eb1c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7f2745d7.js" as="script"><link rel="preload" href="/blog/assets/js/2.0ae801dd.js" as="script"><link rel="preload" href="/blog/assets/js/32.3817c31a.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.cdd60e75.js"><link rel="prefetch" href="/blog/assets/js/11.3d131e48.js"><link rel="prefetch" href="/blog/assets/js/12.719f1814.js"><link rel="prefetch" href="/blog/assets/js/13.74f3b156.js"><link rel="prefetch" href="/blog/assets/js/14.42b23c73.js"><link rel="prefetch" href="/blog/assets/js/15.8d4fc6ad.js"><link rel="prefetch" href="/blog/assets/js/16.fe10f2e5.js"><link rel="prefetch" href="/blog/assets/js/17.1eda3b5b.js"><link rel="prefetch" href="/blog/assets/js/18.29c10f84.js"><link rel="prefetch" href="/blog/assets/js/19.66038017.js"><link rel="prefetch" href="/blog/assets/js/20.84021838.js"><link rel="prefetch" href="/blog/assets/js/21.d0b620b4.js"><link rel="prefetch" href="/blog/assets/js/22.ec172517.js"><link rel="prefetch" href="/blog/assets/js/23.75390440.js"><link rel="prefetch" href="/blog/assets/js/24.2194a490.js"><link rel="prefetch" href="/blog/assets/js/25.125cd26f.js"><link rel="prefetch" href="/blog/assets/js/26.2236f392.js"><link rel="prefetch" href="/blog/assets/js/27.8d941766.js"><link rel="prefetch" href="/blog/assets/js/28.0f5facee.js"><link rel="prefetch" href="/blog/assets/js/29.5b6b9c5d.js"><link rel="prefetch" href="/blog/assets/js/3.6e20b173.js"><link rel="prefetch" href="/blog/assets/js/30.229b41ce.js"><link rel="prefetch" href="/blog/assets/js/31.8139b7b5.js"><link rel="prefetch" href="/blog/assets/js/4.1cfc2f80.js"><link rel="prefetch" href="/blog/assets/js/5.27a77dc9.js"><link rel="prefetch" href="/blog/assets/js/6.cdaa15e3.js"><link rel="prefetch" href="/blog/assets/js/7.dcf0c8b1.js"><link rel="prefetch" href="/blog/assets/js/8.6a39e45c.js"><link rel="prefetch" href="/blog/assets/js/9.7e88f361.js">
+    <link rel="preload" href="/blog/assets/css/0.styles.5608eb1c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7f2745d7.js" as="script"><link rel="preload" href="/blog/assets/js/2.0ae801dd.js" as="script"><link rel="preload" href="/blog/assets/js/27.8d941766.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.cdd60e75.js"><link rel="prefetch" href="/blog/assets/js/11.3d131e48.js"><link rel="prefetch" href="/blog/assets/js/12.719f1814.js"><link rel="prefetch" href="/blog/assets/js/13.74f3b156.js"><link rel="prefetch" href="/blog/assets/js/14.42b23c73.js"><link rel="prefetch" href="/blog/assets/js/15.8d4fc6ad.js"><link rel="prefetch" href="/blog/assets/js/16.fe10f2e5.js"><link rel="prefetch" href="/blog/assets/js/17.1eda3b5b.js"><link rel="prefetch" href="/blog/assets/js/18.29c10f84.js"><link rel="prefetch" href="/blog/assets/js/19.66038017.js"><link rel="prefetch" href="/blog/assets/js/20.84021838.js"><link rel="prefetch" href="/blog/assets/js/21.d0b620b4.js"><link rel="prefetch" href="/blog/assets/js/22.ec172517.js"><link rel="prefetch" href="/blog/assets/js/23.75390440.js"><link rel="prefetch" href="/blog/assets/js/24.2194a490.js"><link rel="prefetch" href="/blog/assets/js/25.125cd26f.js"><link rel="prefetch" href="/blog/assets/js/26.2236f392.js"><link rel="prefetch" href="/blog/assets/js/28.0f5facee.js"><link rel="prefetch" href="/blog/assets/js/29.5b6b9c5d.js"><link rel="prefetch" href="/blog/assets/js/3.6e20b173.js"><link rel="prefetch" href="/blog/assets/js/30.229b41ce.js"><link rel="prefetch" href="/blog/assets/js/31.8139b7b5.js"><link rel="prefetch" href="/blog/assets/js/32.3817c31a.js"><link rel="prefetch" href="/blog/assets/js/4.1cfc2f80.js"><link rel="prefetch" href="/blog/assets/js/5.27a77dc9.js"><link rel="prefetch" href="/blog/assets/js/6.cdaa15e3.js"><link rel="prefetch" href="/blog/assets/js/7.dcf0c8b1.js"><link rel="prefetch" href="/blog/assets/js/8.6a39e45c.js"><link rel="prefetch" href="/blog/assets/js/9.7e88f361.js">
     <link rel="stylesheet" href="/blog/assets/css/0.styles.5608eb1c.css">
   </head>
   <body>
@@ -21,13 +21,13 @@
   基础语法
 </a></li></ul></div></div><div class="nav-item"><a href="/blog/git/" class="nav-link">
   git
-</a></div><div class="nav-item"><a href="/blog/server/" class="nav-link router-link-active">
+</a></div><div class="nav-item"><a href="/blog/server/" class="nav-link">
   服务器运维
 </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="KKB 学习记录" class="dropdown-title"><span class="title">KKB 学习记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="KKB 学习记录" class="mobile-dropdown-title"><span class="title">KKB 学习记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/kkb/vue-router/" class="nav-link">
   vue-router 实现原理
 </a></li><li class="dropdown-item"><!----> <a href="/blog/kkb/vuex/" class="nav-link">
   vuex 实现原理
-</a></li><li class="dropdown-item"><!----> <a href="/blog/kkb/vue/" class="nav-link">
+</a></li><li class="dropdown-item"><!----> <a href="/blog/kkb/vue/" class="nav-link router-link-active">
   vue 源码分析
 </a></li></ul></div></div> <a href="https://github.com/summerstarlee/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
     GitHub
@@ -41,32 +41,17 @@
   基础语法
 </a></li></ul></div></div><div class="nav-item"><a href="/blog/git/" class="nav-link">
   git
-</a></div><div class="nav-item"><a href="/blog/server/" class="nav-link router-link-active">
+</a></div><div class="nav-item"><a href="/blog/server/" class="nav-link">
   服务器运维
 </a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="KKB 学习记录" class="dropdown-title"><span class="title">KKB 学习记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="KKB 学习记录" class="mobile-dropdown-title"><span class="title">KKB 学习记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/kkb/vue-router/" class="nav-link">
   vue-router 实现原理
 </a></li><li class="dropdown-item"><!----> <a href="/blog/kkb/vuex/" class="nav-link">
   vuex 实现原理
-</a></li><li class="dropdown-item"><!----> <a href="/blog/kkb/vue/" class="nav-link">
+</a></li><li class="dropdown-item"><!----> <a href="/blog/kkb/vue/" class="nav-link router-link-active">
   vue 源码分析
 </a></li></ul></div></div> <a href="https://github.com/summerstarlee/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
     GitHub
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/blog/server/" aria-current="page" class="sidebar-link">服务器运维相关</a></li><li><a href="/blog/server/server-link.html" class="sidebar-link">使用 ssh-config 快速登录</a></li><li><a href="/blog/server/window-kill-port.html" aria-current="page" class="active sidebar-link">windows 查看端口并 kill 某个进程</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="windows-查看端口并-kill-某个进程"><a href="#windows-查看端口并-kill-某个进程" class="header-anchor">#</a> windows 查看端口并 kill 某个进程</h1> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看当前系统所有端口使用情况</span>
-<span class="token function">netstat</span> -ano
-
-<span class="token comment"># 查看某个端口被那个应用占用</span>
-<span class="token function">netstat</span> -ano <span class="token operator">|</span> findstr <span class="token number">8080</span>
-
-<span class="token comment"># 使用某个 pid 对应的进程应用名称</span>
-tasklist <span class="token operator">|</span> findstr <span class="token number">2124</span>
-
-<span class="token comment"># 删除某个 pid 对应的进程</span>
-taskkill -pid <span class="token number">2124</span> -f
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/10/2020, 1:40:32 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
-      ←
-      <a href="/blog/server/server-link.html" class="prev">
-        使用 ssh-config 快速登录
-      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/blog/assets/js/app.7f2745d7.js" defer></script><script src="/blog/assets/js/2.0ae801dd.js" defer></script><script src="/blog/assets/js/32.3817c31a.js" defer></script>
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/blog/kkb/vue/" aria-current="page" class="sidebar-link">vue 源码解读</a></li><li><a href="/blog/kkb/vue/reactive.html" class="sidebar-link">vue 响应式原理</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-源码中数据响应实现"><a href="#vue-源码中数据响应实现" class="header-anchor">#</a> Vue 源码中数据响应实现</h1></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/10/2020, 1:40:32 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.7f2745d7.js" defer></script><script src="/blog/assets/js/2.0ae801dd.js" defer></script><script src="/blog/assets/js/27.8d941766.js" defer></script>
   </body>
 </html>

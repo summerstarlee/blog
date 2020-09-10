@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>git 相关</title>
+    <title>原型链</title>
     <meta name="generator" content="VuePress 1.5.4">
     <link rel="icon" href="/blog/android-icon-36x36.png">
     <meta name="description" content="Welcome Star Lee's blog !">
-    <link rel="preload" href="/blog/assets/css/0.styles.5608eb1c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7f2745d7.js" as="script"><link rel="preload" href="/blog/assets/js/2.0ae801dd.js" as="script"><link rel="preload" href="/blog/assets/js/14.42b23c73.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.cdd60e75.js"><link rel="prefetch" href="/blog/assets/js/11.3d131e48.js"><link rel="prefetch" href="/blog/assets/js/12.719f1814.js"><link rel="prefetch" href="/blog/assets/js/13.74f3b156.js"><link rel="prefetch" href="/blog/assets/js/15.8d4fc6ad.js"><link rel="prefetch" href="/blog/assets/js/16.fe10f2e5.js"><link rel="prefetch" href="/blog/assets/js/17.1eda3b5b.js"><link rel="prefetch" href="/blog/assets/js/18.29c10f84.js"><link rel="prefetch" href="/blog/assets/js/19.66038017.js"><link rel="prefetch" href="/blog/assets/js/20.84021838.js"><link rel="prefetch" href="/blog/assets/js/21.d0b620b4.js"><link rel="prefetch" href="/blog/assets/js/22.ec172517.js"><link rel="prefetch" href="/blog/assets/js/23.75390440.js"><link rel="prefetch" href="/blog/assets/js/24.2194a490.js"><link rel="prefetch" href="/blog/assets/js/25.125cd26f.js"><link rel="prefetch" href="/blog/assets/js/26.2236f392.js"><link rel="prefetch" href="/blog/assets/js/27.8d941766.js"><link rel="prefetch" href="/blog/assets/js/28.0f5facee.js"><link rel="prefetch" href="/blog/assets/js/29.5b6b9c5d.js"><link rel="prefetch" href="/blog/assets/js/3.6e20b173.js"><link rel="prefetch" href="/blog/assets/js/30.229b41ce.js"><link rel="prefetch" href="/blog/assets/js/31.8139b7b5.js"><link rel="prefetch" href="/blog/assets/js/32.3817c31a.js"><link rel="prefetch" href="/blog/assets/js/4.1cfc2f80.js"><link rel="prefetch" href="/blog/assets/js/5.27a77dc9.js"><link rel="prefetch" href="/blog/assets/js/6.cdaa15e3.js"><link rel="prefetch" href="/blog/assets/js/7.dcf0c8b1.js"><link rel="prefetch" href="/blog/assets/js/8.6a39e45c.js"><link rel="prefetch" href="/blog/assets/js/9.7e88f361.js">
+    <link rel="preload" href="/blog/assets/css/0.styles.5608eb1c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7f2745d7.js" as="script"><link rel="preload" href="/blog/assets/js/2.0ae801dd.js" as="script"><link rel="preload" href="/blog/assets/js/20.84021838.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.cdd60e75.js"><link rel="prefetch" href="/blog/assets/js/11.3d131e48.js"><link rel="prefetch" href="/blog/assets/js/12.719f1814.js"><link rel="prefetch" href="/blog/assets/js/13.74f3b156.js"><link rel="prefetch" href="/blog/assets/js/14.42b23c73.js"><link rel="prefetch" href="/blog/assets/js/15.8d4fc6ad.js"><link rel="prefetch" href="/blog/assets/js/16.fe10f2e5.js"><link rel="prefetch" href="/blog/assets/js/17.1eda3b5b.js"><link rel="prefetch" href="/blog/assets/js/18.29c10f84.js"><link rel="prefetch" href="/blog/assets/js/19.66038017.js"><link rel="prefetch" href="/blog/assets/js/21.d0b620b4.js"><link rel="prefetch" href="/blog/assets/js/22.ec172517.js"><link rel="prefetch" href="/blog/assets/js/23.75390440.js"><link rel="prefetch" href="/blog/assets/js/24.2194a490.js"><link rel="prefetch" href="/blog/assets/js/25.125cd26f.js"><link rel="prefetch" href="/blog/assets/js/26.2236f392.js"><link rel="prefetch" href="/blog/assets/js/27.8d941766.js"><link rel="prefetch" href="/blog/assets/js/28.0f5facee.js"><link rel="prefetch" href="/blog/assets/js/29.5b6b9c5d.js"><link rel="prefetch" href="/blog/assets/js/3.6e20b173.js"><link rel="prefetch" href="/blog/assets/js/30.229b41ce.js"><link rel="prefetch" href="/blog/assets/js/31.8139b7b5.js"><link rel="prefetch" href="/blog/assets/js/32.3817c31a.js"><link rel="prefetch" href="/blog/assets/js/4.1cfc2f80.js"><link rel="prefetch" href="/blog/assets/js/5.27a77dc9.js"><link rel="prefetch" href="/blog/assets/js/6.cdaa15e3.js"><link rel="prefetch" href="/blog/assets/js/7.dcf0c8b1.js"><link rel="prefetch" href="/blog/assets/js/8.6a39e45c.js"><link rel="prefetch" href="/blog/assets/js/9.7e88f361.js">
     <link rel="stylesheet" href="/blog/assets/css/0.styles.5608eb1c.css">
   </head>
   <body>
@@ -17,9 +17,9 @@
           你不知道的js 读后感
         </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/dontKnowJs/" class="nav-link">
   上卷
-</a></li></ul></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link">
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link router-link-active">
   基础语法
-</a></li></ul></div></div><div class="nav-item"><a href="/blog/git/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/git/" class="nav-link">
   git
 </a></div><div class="nav-item"><a href="/blog/server/" class="nav-link">
   服务器运维
@@ -37,9 +37,9 @@
           你不知道的js 读后感
         </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/dontKnowJs/" class="nav-link">
   上卷
-</a></li></ul></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link">
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link router-link-active">
   基础语法
-</a></li></ul></div></div><div class="nav-item"><a href="/blog/git/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/git/" class="nav-link">
   git
 </a></div><div class="nav-item"><a href="/blog/server/" class="nav-link">
   服务器运维
@@ -51,12 +51,7 @@
   vue 源码分析
 </a></li></ul></div></div> <a href="https://github.com/summerstarlee/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
     GitHub
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/blog/git/tag.html" class="sidebar-link">tag 标签管理</a></li><li><a href="/blog/git/closeIssues.html" class="sidebar-link">使用 commit message 自动关闭 issues</a></li><li><a href="/blog/git/repassword.html" class="sidebar-link">本地更新 git 仓库的用户密码</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="git-相关"><a href="#git-相关" class="header-anchor">#</a> git 相关</h3> <ol><li>git 修改远程仓库地址</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 1. 删除远端分支的联系</span>
-<span class="token function">git</span> remote <span class="token function">rm</span> origin 
-
-<span class="token comment"># 2. 添加新的远端分支</span>
-<span class="token function">git</span> remote <span class="token function">add</span> origin <span class="token punctuation">[</span>url<span class="token punctuation">]</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/10/2020, 1:40:32 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/blog/assets/js/app.7f2745d7.js" defer></script><script src="/blog/assets/js/2.0ae801dd.js" defer></script><script src="/blog/assets/js/14.42b23c73.js" defer></script>
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/blog/javascript/this.html" class="sidebar-link">this 执行问题</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="原型链"><a href="#原型链" class="header-anchor">#</a> 原型链</h1></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/10/2020, 1:40:32 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.7f2745d7.js" defer></script><script src="/blog/assets/js/2.0ae801dd.js" defer></script><script src="/blog/assets/js/20.84021838.js" defer></script>
   </body>
 </html>
