@@ -48,6 +48,23 @@ module.exports = {
       {
         text: '服务器运维',
         link: '/server/'
+      },
+      {
+        text: 'KKB 学习记录',
+        items: [
+          {
+            text: 'vue-router 实现原理',
+            link: '/kkb/vue-router/'
+          },
+          {
+            text: 'vuex 实现原理',
+            link: '/kkb/vuex/'
+          },
+          {
+            text: 'vue 源码分析',
+            link: '/kkb/vue/'
+          }
+        ]
       }
     ], 
     sidebar: {
@@ -74,6 +91,16 @@ module.exports = {
       ],
       '/dontKnowJs/': [
         ""
+      ],
+      '/kkb/vue-router/': [
+        ''
+      ],
+      '/kkb/vuex/': [
+        ''
+      ],
+      '/kkb/vue/': [
+        '',
+        'reactive'
       ]
     }
   }

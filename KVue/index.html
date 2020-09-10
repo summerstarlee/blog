@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+      {{a}}
+    </div>
+    {{b}}
+    <div v-html="msg"></div>
+  </div>
+</body>
+<script src="./KVue.js"></script>
+<script>
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      a: 1,
+      b:2,
+      msg: 'msg'
+    }
+  })
+
+    // vm.$data.a = new Date()
+</script>
+</html>
