@@ -87,7 +87,8 @@ module.exports = {
         'window-kill-port'
       ],
       '/javascript/': [
-        'this'
+        'this',
+        'with'
       ],
       '/dontKnowJs/': [
         ""
