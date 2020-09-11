@@ -2,7 +2,7 @@
 
 ## MVVM 模式 (view viewModel model)
 vue 是一个基于 MVVM 模式实现的渐进式框架。
-![mvvm](/mvvm.jpg)
+![mvvm](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/39df462cc55b49cc8531cbfad05702b9~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 view 是视图层（DOM）, model 是数据层（data）。 viewModel 充当了一个中间角色，它能够根据绑定的 model 数据渲染 view 视图, 同时也能监听视图层的事件来改变 model 的数据从而更新视图变化。
@@ -245,7 +245,7 @@ obj.push(1)
 
 Vue 内部实现了上面讲到的 `defineReactive` `observer` `set` 等方法。 由于 `observer` 只能监听到数据变化操作， Vue 还需要实现在初始化阶段对绑定了数据的元素进行渲染、 监听到数据变化时更新 dom 。
 
-![mvvm](/reactive_1.png)
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d1abf44b01de4fd0b60bab80560a82f8~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 
