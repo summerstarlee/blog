@@ -13,6 +13,7 @@ module.exports = {
   themeConfig: {
     repo: 'summerstarlee/blog', 
     lastUpdated: 'Last Updated', 
+    sidebarDepth: 2,
     serviceWorker: {
       updatePopup: true
     }, 

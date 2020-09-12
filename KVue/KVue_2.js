@@ -1,9 +1,9 @@
 function defineReactive(obj, key, val) {
   observer(val)
-  const dep = new Dep(obj, key, val)
+  const dep = new Dep()
   Object.defineProperty(obj, key, {
     get() {
-      console.log("get: ", key, Dep.target)
+      console.log("get: ", key)
       Dep.target && dep.add(Dep.target)
       return val
     },
@@ -14,7 +14,6 @@ function defineReactive(obj, key, val) {
         observer(newVal)
         val = newVal
         dep.notify()
-        // update(newVal)
       }
     },
   })
@@ -115,7 +114,6 @@ class Compile {
       // 文本节点 (这里会存在由于换行导致的空节点) 使用正则匹配到 含有 {{xxx}} 绑定的节点
       else if (child.nodeType === 3 && /\{\{(.*)\}\}/.test(child.textContent)) {
         console.log("编译文本节点", RegExp.$1, this._vm)
-        child.textContent = this._vm[RegExp.$1]
         this.compileText(child, RegExp.$1)
       }
     })

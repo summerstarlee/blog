@@ -20,10 +20,9 @@
   })
   
 
-  setTimeout(() => {
-    vm.$data.time = new Date().getTime()
+  setInterval(() => {
+    vm.$data.time = new Date()
   }, 1000)
 
-    // vm.$data.a = new Date()
 </script>
 </html>
