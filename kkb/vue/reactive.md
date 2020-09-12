@@ -240,7 +240,6 @@ obj.push(1)
 [查看以上完整代码](https://github.com/summerstarlee/vue_study/blob/reactive_1/reactive_1.js)
 
 
-
 ## 数据响应原理
 
 实现了数据绑定后， 就可以在数据发生变化的时候更新 dom 
@@ -407,10 +406,26 @@ class Vue {
     this.$el = options.el
 
     observe(this.$data)
-
+    this.proxy('$data')
+    
     new Compile(this.$el, this.$data)
   }
+
+  // 代理函数 用来将 this.$data this.methods 里面的属性直接代理到 this 上面去
+  proxy(prop) {
+    Object.keys(this[prop]).forEach(key => {
+      Object.defineProperty(this, key, {
+        get() {
+          return this[prop][key]
+        },
+        set(val) {
+          this[prop][key] = val
+        }
+      })
+    })
+  }
 }
+
 ```
 
 ```html
@@ -638,8 +653,6 @@ class Watcher {
 在生成 `Vue` 实例的时候, 进行 `compile`, 在 `compile` 过程中将使用到的依赖收集到 `Watcher`中,并告诉 `Watcher` 如何更新视图。
 
 
-
-
 ### 3. 初始化渲染触发 `getter` 方法, 将 `Watcher` 添加到 `Dep` 中
 在Vue 的视图响应第一步中, Compile 识别出依赖的时候触发了 `defineReactive` 的 `setter` 方法并生成了 `Watcher` 的实例。 我们需要在这个过程之后将 `watcher` 和 `dep` 进行关联。步骤如下:
 1. 生成 `Watcher` 实例的时候将 `Dep.target` 指向该 wachter 实例。
@@ -720,5 +733,66 @@ function defineReactive(obj, key, val) {
   * watcher 实例化时（依赖收集），会再次调用 getter 方法将 watcher 实例添加到 dep 的 watchers 中。除此外, watcher 实例化还确定了该依赖的 dom 更新策略, 并存放在自身的 update 方法中。
 3. 当数据发生变化时, 触发 setter 方法, 这时会触发该 key 的 dep 实例中的 notify 方法, notify 方法通过遍历所有已经收集来的 watcher 并调用 watcher 的 update 方法达到更新页面的效果.
 
+
+## Vue 的事件响应
+在 `Compile` 类中, `compile` 方法解析了 `v-html`、插值表达式。 除此外还可以在这个过程中解析元素节点上绑定的 `@xxx="handleXxx"` 这样的事件并监听。
+
+实现步骤：
+1. 解析 `@xxx="handleXxx"`, 并得到需要监听的事件 `xxx` 和需要执行执行的事件 `handleXxx`
+2. 含有事件监听属性声明的元素调用 `addEventListener` 监听 `xxx` 方法。
+
+```js
+  compile(el) {
+    const children = el.childNodes
+
+    Array.from(children).forEach(child => {
+      // 元素节点
+      if (child.nodeType === 1) {
+        // 如果包含子节点需要先 迭代 子元素
+        if (child.hasChildNodes()) {
+          this.compile(child)
+        }
+        let nodeAttrs = child.attributes
+        // 查找 v-html 绑定的情况
+        if (
+          Array.from(nodeAttrs).findIndex(attr => attr.name === 'v-html') > -1
+        ) {
+          this.compileHtml(child, child.getAttribute('v-html'))
+        }
+        // 事件处理 @xx = "onXx"
++       const eventArrs = Array.from(nodeAttrs).filter(attr =>
++          attr.name.startsWith('@')
++        )
+
++        eventArrs.forEach(attr => {
++          // 拿到 xx
++          const eventName = attr.name.substring(1)
++          // 拿到 onXx
++          const eventValue = child.getAttribute(attr.name)
++          console.log(this._vm)
++          // 监听调用 methods 中定义的方法
++          child.addEventListener(
++            eventName,
++            this._vm.$options.methods[eventValue].bind(this._vm)
++          )
++        })
+      }
+      // 文本节点 (这里会存在由于换行导致的空节点) 使用正则匹配到 含有 {{xxx}} 绑定的节点
+      else if (child.nodeType === 3 && /\{\{(.*)\}\}/.test(child.textContent)) {
+        this.compileText(child, RegExp.$1)
+      }
+    })
+  }
+```
+
+需要注意的是：
+```js
+// 监听调用 methods 中定义的方法
+child.addEventListener(
+  eventName,
+  this._vm.$options.methods[eventValue].bind(this._vm)
+)
+```
+`addEventListener` 需要执行的事件需要使用 `bind` 绑定一下 `this_vm`(当前的实例对象),这是为了使定义在 methods 对象中的事件始终能够正确的使用 `this` 调用该实例中的属性。
 
 [查看完整代码](https://github.com/summerstarlee/vue_study/tree/reactive)
