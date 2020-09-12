@@ -1,3 +1,4 @@
+[[toc]]
 # vue 响应式原理
 
 ## MVVM 模式 (view viewModel model)
@@ -722,22 +723,3 @@ function defineReactive(obj, key, val) {
 
 
 [查看完整代码](https://github.com/summerstarlee/vue_study/tree/reactive)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
