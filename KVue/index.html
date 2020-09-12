@@ -7,23 +7,22 @@
 </head>
 <body>
   <div id="app">
-    <div>
-      {{a}}
-    </div>
-    {{b}}
-    <div v-html="msg"></div>
+    {{time}}
   </div>
 </body>
-<script src="./KVue.js"></script>
+<script src="./KVue_2.js"></script>
 <script>
   const vm = new Vue({
     el: '#app',
     data: {
-      a: 1,
-      b:2,
-      msg: 'msg'
+      time: new Date() 
     }
   })
+  
+
+  setTimeout(() => {
+    vm.$data.time = new Date().getTime()
+  }, 1000)
 
     // vm.$data.a = new Date()
 </script>

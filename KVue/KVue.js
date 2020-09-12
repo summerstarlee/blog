@@ -19,14 +19,26 @@ function observe(obj) {
   if(typeof obj !== 'object' || typeof obj === null) {
     return 
   }
-  if(Array.isArray(obj)) {
-    // 数组操作
-  }else {
+  new Observer(obj)
+}
+
+class Observer {
+  constructor(obj) {
+    this.value = obj
+
+
+    if(Array.isArray(obj)) {
+      // 数组操作
+    }else {
+      this.walk(obj)
+    }
+  }
+
+  walk(obj) {
     Object.keys(obj).forEach(key => {
       defineReactive(obj, key, obj[key])
     })
   }
-  
 }
 
 
@@ -37,18 +49,21 @@ class Vue {
     this.$el = options.el
 
     observe(this.$data)
-    // this.proxy()
+    this.proxy()
 
-    new Compile(this.$el, this.$data)
+    // new Compile(this.$el, this.$data)
   }
 
   // proxy 映射 data 上面的数据到 this 上面
   proxy (){
     Object.keys(this.$data).forEach(key => {
       Object.defineProperty(this, key, {
+        // this.xx 获取到的时 this.$data[xx]的值
         get() {
           return this.$data[key]
         },
+
+        // this.xx 时，同步 this.$data[xx] 的值
         set(newVal) {
           this.$data[key] = newVal
         }

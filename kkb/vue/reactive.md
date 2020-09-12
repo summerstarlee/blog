@@ -241,16 +241,11 @@ obj.push(1)
 
 
 
-## Vue 数据监听和响应的原理
+## 数据响应原理
 
-Vue 内部实现了上面讲到的 `defineReactive` `observer` `set` 等方法。 由于 `observer` 只能监听到数据变化操作， Vue 还需要实现在初始化阶段对绑定了数据的元素进行渲染、 监听到数据变化时更新 dom 。
+实现了数据绑定后， 就可以在数据发生变化的时候更新 dom 
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d1abf44b01de4fd0b60bab80560a82f8~tplv-k3u1fbpfcp-zoom-1.image)
-
-
-
-
-
+### 更新整个 dom 
 
 我们可以声明一个 class 类， 其构造器接收一个对象，在构造器中实现对这个对象属性进行监听的行为。
 
@@ -261,7 +256,7 @@ function observe (obj) {
 
 class Vue {
   constructor(options) {
-    this.data = options.data
+    this.$data = options.data
 
     observe(this.data)
   }
@@ -273,13 +268,14 @@ class Vue {
 
 <script>
   const vm = new Vue({
+    el: '#app',
     data: {
       msg: new Date() 
     }
   })
 
   setInterval(() => {
-    vm.data.msg = new Date()
+    vm.$data.msg = new Date()
   }, 1000)
 
 </script>
@@ -288,22 +284,24 @@ class Vue {
 这样每秒钟都触发 defineReactive 函数中 `console.log('set: ', newVal)`
 
 
-## 数据响应
 
 当实现了对数据的绑定后，就可以在数据发生变化时更新页面了。
 ```js
-  function defineReactive(obj, key, val) {
+function defineReactive(obj, key, val) {
+  observer(val)
   Object.defineProperty(obj, key, {
     get() {
-      console.log('get: ', val);
+      console.log('get: ', key);
       return val
     },
 
     set(newVal){
       if(newVal !== val) {
-        console.log('set: ', newVal);
+        console.log(`set: ${key}`, newVal);
+        observer(newVal)
         val = newVal
-+       update(newVal) // 更新页面操作
+        // 这里添加了操作 dom 的操作
+        update(newVal)
       }
     }
   })
@@ -314,6 +312,8 @@ function update(newVal) {
   app.innerHTML = newVal
 }
 ```
+
+### Compile 编译器和初始化渲染
 
 上面的代码有两个很明显的问题： 1. 只有数据发生改变时，才进行 `update` 操作，没有进行初始渲染。  2. 直接替换了整个根节点，应该只针对绑定了数据的 dom 进行更新。 
 
@@ -336,7 +336,11 @@ function update(newVal) {
 {{msg}}
 ```
 
-现根据上面三种绑定数据的方式，在 Compile 中实现数据的替换
+现根据上面三种绑定数据的方式，在 Compile 中实现数据的替换。
+
+![Compile 实现步骤]()
+
+
 
 ```js
 class Compile {
@@ -393,10 +397,8 @@ class Compile {
 将 compile 在 Vue 实例化的时候执行一次，这样就可以完成初始化渲染绑定数据的 DOM 了。
 
 ```js
-
 class Vue {
   constructor(options) {
-    this.$options = options
     this.$data = options.data
     this.$el = options.el
 
@@ -406,6 +408,87 @@ class Vue {
   }
 }
 ```
+
+```html
+<div id="app">
+  {{time}}
+</div>
+
+<script>
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      time: new Date() 
+    }
+  })
+
+</script>
+```
+
+### 数据变化时更新 DOM 
+
+在看数据变化更新 DOM 前，先看一下什么是依赖和依赖收集
+
+#### 依赖 & 依赖收集
+
+视图中会用到 `data` 中某个 `key`, 这称为 **依赖**, 为了维护所有的这些依赖， 需要有一个 `Watcher` 收集这些依赖并维护， 这个过程叫做 **依赖收集**。 除此外, 由于同一个 `key` 可能在视图中出现多次, 需要抽象出来一个 `Dep` 来管理每一个 `key`, 当 `key` 发生变化时, 通知所有使用到这个 `key` 的 `Watcher` 更新视图。
+
+```html
+<div>{{foo}}</div>
+<div>{{bar}}</div>
+<div>{{bar}}</div>
+
+<script>
+  new Vue({
+    data: {
+      foo: 'foo',
+      bar: 'bar'
+    }
+  })
+</script>  
+```
+如代码所示, 共有 3 个 `Watcher` (3 次使用到了 data 中的属性), 2 个 `Dep`(视图中使用到了 2 个 data 中的属性)
+
+![视图&Watcher&Dep 之间的关系]()
+
+
+Vue 的视图响应基于依赖收集而实现。
+
+实现思路：
+
+1. `definedReactive` 时为每个属性创建一个 `Dep`
+2. 初始化视图读取数据时创建一个 `Watcher`
+3. 由于初始化渲染触发 `getter` 方法, 便将 `Watcher` 添加到 `Dep` 中
+4. 当数据发生改变触发 `setter` 方法时, 通知对应的 `Dep` 更新它管理的所有 `Watcher` 
+
+根据上面的步骤，线
+```js
+class Dep {
+  constructor() {
+
+  }
+}
+
+class Watcher{
+  constructor() {
+    
+  }
+
+  update() {
+
+  }
+}
+
+function defineReactive(obj, key, val) {
+  new Dep(obj, key, val)
+  // ....
+}
+
+```
+
+
+
+
 
 
 
