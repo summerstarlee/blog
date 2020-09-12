@@ -1,6 +1,5 @@
-[[toc]]
 # vue 响应式原理
-
+[[toc]]
 ## MVVM 模式 (view viewModel model)
 vue 是一个基于 MVVM 模式实现的渐进式框架。
 ![mvvm](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/39df462cc55b49cc8531cbfad05702b9~tplv-k3u1fbpfcp-zoom-1.image)
