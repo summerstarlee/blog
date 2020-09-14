@@ -89,7 +89,8 @@ module.exports = {
       '/javascript/': [
         'this',
         'with',
-        'comma'
+        'comma',
+        'context'
       ],
       '/dontKnowJs/': [
         ""
