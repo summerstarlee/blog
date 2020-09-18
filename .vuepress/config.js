@@ -105,7 +105,8 @@ module.exports = {
       '/kkb/vue/': [
         '',
         'reactive',
-        'workflow'
+        'workflow',
+        'vue_reacitve'
       ]
     }
   }
