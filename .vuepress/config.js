@@ -47,6 +47,10 @@ module.exports = {
         link: '/nodejs/',
       },
       {
+        text: '小程序 相关',
+        link: '/wxMini/'
+      },
+      {
         text: 'Javascript',
         items: [
           {
@@ -107,7 +111,8 @@ module.exports = {
         'tag',
         'closeIssues',
         'repassword',
-        'git-chached'
+        'git-chached',
+        'muti_user'
       ],
       '/server/': [
         '',
@@ -137,13 +142,18 @@ module.exports = {
         '',
         'reactive',
         'workflow',
-        'vue_reactive'
+        'vue_reactive',
+        'inject_provide',
+        'async',
+
       ],
       '/webpack/': [
         "",
         "performance",
+        'bundle_result',
         "tree-shaking",
         "style",
+        'html-webpack-plugin',
         'ignore-plugin',
         'img-config',
         'lazy-loader',
@@ -154,12 +164,23 @@ module.exports = {
       ],
       '/element/': [
         "",
-        "base"
+        'project_analyse',
+        "base",
+        "make",
+        "build_file",
+        "theme-chalk",
+        "npm_publish"
       ],
       '/css/': [
         "",
         "css_box",
-        "pseudoElements"
+        "pseudoElements",
+        "grid"
+      ],
+      '/wxMini/': [
+        "",
+        "custom_component",
+        "template"
       ],
       '/nodejs/': [
         "",
