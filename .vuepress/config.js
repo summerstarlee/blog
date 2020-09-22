@@ -23,6 +23,30 @@ module.exports = {
         link: '/engineering/',
       },
       {
+        text: 'webpack',
+        link: '/webpack/',
+      },
+      {
+        text: 'Element-UI 源码分析',
+        link: '/element/',
+      },
+      {
+        text: 'vue-cli 源码分析',
+        link: '/vue-cli/',
+      },
+      {
+        text: 'css 相关',
+        link: '/css/',
+      },
+      {
+        text: 'html 相关',
+        link: '/html/',
+      },
+      {
+        text: 'node.js 相关',
+        link: '/nodejs/',
+      },
+      {
         text: 'Javascript',
         items: [
           {
@@ -55,15 +79,15 @@ module.exports = {
         items: [
           {
             text: 'vue-router 实现原理',
-            link: '/kkb/vue-router/'
+            link: '/vue-router/'
           },
           {
             text: 'vuex 实现原理',
-            link: '/kkb/vuex/'
+            link: '/vuex/'
           },
           {
             text: 'vue 源码分析',
-            link: '/kkb/vue/'
+            link: '/vue/'
           }
         ]
       }
@@ -75,38 +99,84 @@ module.exports = {
         'vs-eslint',
         'babel',
         'prettier',
-        'npm_change_registry'
+        'npm_change_registry',
+        'npm_1',
+        'standard-version'
       ],
       '/git/': [
         'tag',
         'closeIssues',
-        'repassword'
+        'repassword',
+        'git-chached'
       ],
       '/server/': [
         '',
         'server-link',
-        'window-kill-port'
+        'window-kill-port',
+        'nginx-install'
       ],
       '/javascript/': [
         'this',
         'with',
         'comma',
-        'context'
+        'context',
+        "module-import",
+        "function"
       ],
       '/dontKnowJs/': [
         ""
       ],
-      '/kkb/vue-router/': [
+      '/vue-router/': [
+        '',
+        'simple'
+      ],
+      '/vuex/': [
         ''
       ],
-      '/kkb/vuex/': [
-        ''
-      ],
-      '/kkb/vue/': [
+      '/vue/': [
         '',
         'reactive',
         'workflow',
-        'vue_reacitve'
+        'vue_reactive'
+      ],
+      '/webpack/': [
+        "",
+        "performance",
+        "tree-shaking",
+        "style",
+        'ignore-plugin',
+        'img-config',
+        'lazy-loader',
+        'muti-page',
+        'no-parse',
+        'out-file',
+        'plugin'
+      ],
+      '/element/': [
+        "",
+        "base"
+      ],
+      '/css/': [
+        "",
+        "css_box",
+        "pseudoElements"
+      ],
+      '/nodejs/': [
+        "",
+        "events",
+        "process"
+      ],
+      '/vue-cli/':[
+        ""
+      ],
+      '/html/':[
+        "",
+        "intersectionObserver",
+        "event1",
+        "event2",
+        "event3",
+        "event4",
+        "event5",
       ]
     }
   }
