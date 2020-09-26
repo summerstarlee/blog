@@ -46,7 +46,7 @@ npx babel --plugins @babel/plugin-transform-arrow-functions test.js
 
  1. `babel.config.js`
 
- 如同 `webpack.config.js` 使用 `babel.config.js` 可以以编程的方式创建配置文件， 使用这种方式还可以选择编译 node_modules 目录下的模块。
+使用 `babel.config.js` 可以用编程的方式创建配置文件， 使用这种方式还可以选择编译 node_modules 目录下的模块。
 ```js
 module.exports = {
   plugins: ["@babel/plugin-transform-arrow-functions"]
