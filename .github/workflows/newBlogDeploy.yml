@@ -42,4 +42,4 @@ jobs:
         HOST: 106.53.6.5 
         PASSWORD: Jay__gg219826
       run: |
-        echo ${{HOST}} ${{PASSWORD}}
+        echo $HOST $HOST
