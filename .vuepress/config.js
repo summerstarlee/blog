@@ -118,7 +118,8 @@ module.exports = {
         '',
         'server-link',
         'window-kill-port',
-        'nginx-install'
+        'nginx-install',
+        'github_action_deploy'
       ],
       '/javascript/': [
         'this',
