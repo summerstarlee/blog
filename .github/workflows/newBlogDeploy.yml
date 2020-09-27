@@ -13,5 +13,12 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        presist-credentials: false
+        
+    - name: Install and build 🔧
+      run: |
+        yarn 
+        yarn build
       
    
