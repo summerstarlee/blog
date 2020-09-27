@@ -1,9 +1,3 @@
 import React from 'react'
 
-export default () => {
-  return (
-    <div>
-      App container 
-    </div>
-  )
-}
+export default () => <div>App container</div>

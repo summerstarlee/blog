@@ -5,7 +5,8 @@
   "author": "Star (Shun) Li",
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "dependencies": {
     "react": "^16.13.1",
