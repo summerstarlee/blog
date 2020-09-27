@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>github Action 实现 GitHub Pages 和 私服 自动部署</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="icon" href="/blog/android-icon-36x36.png">
+    <meta name="description" content="Welcome Star Lee's blog !">
+    <link rel="preload" href="/blog/assets/css/0.styles.7a0018a6.css" as="style"><link rel="preload" href="/blog/assets/js/app.133b3ecd.js" as="script"><link rel="preload" href="/blog/assets/js/2.571e916c.js" as="script"><link rel="preload" href="/blog/assets/js/58.01841866.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.61a27ac9.js"><link rel="prefetch" href="/blog/assets/js/11.37148e18.js"><link rel="prefetch" href="/blog/assets/js/12.2eec4498.js"><link rel="prefetch" href="/blog/assets/js/13.884a58a0.js"><link rel="prefetch" href="/blog/assets/js/14.3adb22de.js"><link rel="prefetch" href="/blog/assets/js/15.c1c2f7fe.js"><link rel="prefetch" href="/blog/assets/js/16.be5a8867.js"><link rel="prefetch" href="/blog/assets/js/17.e6b6d817.js"><link rel="prefetch" href="/blog/assets/js/18.449403f6.js"><link rel="prefetch" href="/blog/assets/js/19.21243975.js"><link rel="prefetch" href="/blog/assets/js/20.49ec9af0.js"><link rel="prefetch" href="/blog/assets/js/21.cbaa1f01.js"><link rel="prefetch" href="/blog/assets/js/22.a607aa92.js"><link rel="prefetch" href="/blog/assets/js/23.56ab5c38.js"><link rel="prefetch" href="/blog/assets/js/24.a3150952.js"><link rel="prefetch" href="/blog/assets/js/25.1b84c3f8.js"><link rel="prefetch" href="/blog/assets/js/26.b7a7d7df.js"><link rel="prefetch" href="/blog/assets/js/27.6574d3b4.js"><link rel="prefetch" href="/blog/assets/js/28.e76b20dc.js"><link rel="prefetch" href="/blog/assets/js/29.16570d1c.js"><link rel="prefetch" href="/blog/assets/js/3.e3d12223.js"><link rel="prefetch" href="/blog/assets/js/30.398c9628.js"><link rel="prefetch" href="/blog/assets/js/31.fbbf42c0.js"><link rel="prefetch" href="/blog/assets/js/32.3fc3ce23.js"><link rel="prefetch" href="/blog/assets/js/33.43cc7b88.js"><link rel="prefetch" href="/blog/assets/js/34.01ddd0dc.js"><link rel="prefetch" href="/blog/assets/js/35.a3baebde.js"><link rel="prefetch" href="/blog/assets/js/36.a20eeacb.js"><link rel="prefetch" href="/blog/assets/js/37.c2e9228f.js"><link rel="prefetch" href="/blog/assets/js/38.ef2ef8c2.js"><link rel="prefetch" href="/blog/assets/js/39.d79c9149.js"><link rel="prefetch" href="/blog/assets/js/4.35c41ba6.js"><link rel="prefetch" href="/blog/assets/js/40.60a46301.js"><link rel="prefetch" href="/blog/assets/js/41.f4cb000f.js"><link rel="prefetch" href="/blog/assets/js/42.37486d01.js"><link rel="prefetch" href="/blog/assets/js/43.16538134.js"><link rel="prefetch" href="/blog/assets/js/44.164101dc.js"><link rel="prefetch" href="/blog/assets/js/45.1b5d6e6e.js"><link rel="prefetch" href="/blog/assets/js/46.8d41391a.js"><link rel="prefetch" href="/blog/assets/js/47.483f3b3c.js"><link rel="prefetch" href="/blog/assets/js/48.932f16f7.js"><link rel="prefetch" href="/blog/assets/js/49.76e83947.js"><link rel="prefetch" href="/blog/assets/js/5.7b10027c.js"><link rel="prefetch" href="/blog/assets/js/50.6d629fb7.js"><link rel="prefetch" href="/blog/assets/js/51.07645e38.js"><link rel="prefetch" href="/blog/assets/js/52.43688db2.js"><link rel="prefetch" href="/blog/assets/js/53.36caa4d3.js"><link rel="prefetch" href="/blog/assets/js/54.0037e51c.js"><link rel="prefetch" href="/blog/assets/js/55.1c1548d2.js"><link rel="prefetch" href="/blog/assets/js/56.337d542a.js"><link rel="prefetch" href="/blog/assets/js/57.90f6968d.js"><link rel="prefetch" href="/blog/assets/js/59.e78c93fc.js"><link rel="prefetch" href="/blog/assets/js/6.5964ef22.js"><link rel="prefetch" href="/blog/assets/js/60.5fb5afd7.js"><link rel="prefetch" href="/blog/assets/js/61.4c43600a.js"><link rel="prefetch" href="/blog/assets/js/62.6cd7ad0b.js"><link rel="prefetch" href="/blog/assets/js/63.425348de.js"><link rel="prefetch" href="/blog/assets/js/64.b7aad860.js"><link rel="prefetch" href="/blog/assets/js/65.997c7d4d.js"><link rel="prefetch" href="/blog/assets/js/66.81c50eda.js"><link rel="prefetch" href="/blog/assets/js/67.87610e61.js"><link rel="prefetch" href="/blog/assets/js/68.69fffd19.js"><link rel="prefetch" href="/blog/assets/js/69.6c9f46b1.js"><link rel="prefetch" href="/blog/assets/js/7.020a09ca.js"><link rel="prefetch" href="/blog/assets/js/70.ad097d99.js"><link rel="prefetch" href="/blog/assets/js/71.43e50775.js"><link rel="prefetch" href="/blog/assets/js/72.e85d8cd1.js"><link rel="prefetch" href="/blog/assets/js/73.3731948c.js"><link rel="prefetch" href="/blog/assets/js/74.fac639cf.js"><link rel="prefetch" href="/blog/assets/js/75.ca97a079.js"><link rel="prefetch" href="/blog/assets/js/76.7f1129c9.js"><link rel="prefetch" href="/blog/assets/js/77.9dbb3b87.js"><link rel="prefetch" href="/blog/assets/js/78.a9ada493.js"><link rel="prefetch" href="/blog/assets/js/79.8147b121.js"><link rel="prefetch" href="/blog/assets/js/8.e0b61867.js"><link rel="prefetch" href="/blog/assets/js/80.902509c1.js"><link rel="prefetch" href="/blog/assets/js/81.dde5faa3.js"><link rel="prefetch" href="/blog/assets/js/82.9169af8d.js"><link rel="prefetch" href="/blog/assets/js/83.e27fdf42.js"><link rel="prefetch" href="/blog/assets/js/84.8b7a53ac.js"><link rel="prefetch" href="/blog/assets/js/85.4e264021.js"><link rel="prefetch" href="/blog/assets/js/86.db2055c2.js"><link rel="prefetch" href="/blog/assets/js/87.e96b1fd1.js"><link rel="prefetch" href="/blog/assets/js/88.9dd1dbcb.js"><link rel="prefetch" href="/blog/assets/js/89.b560268e.js"><link rel="prefetch" href="/blog/assets/js/9.0016b4ba.js"><link rel="prefetch" href="/blog/assets/js/90.a7727e60.js"><link rel="prefetch" href="/blog/assets/js/91.4b10b549.js"><link rel="prefetch" href="/blog/assets/js/92.be8014d8.js"><link rel="prefetch" href="/blog/assets/js/93.23d4340e.js"><link rel="prefetch" href="/blog/assets/js/94.d008c180.js"><link rel="prefetch" href="/blog/assets/js/95.85eff390.js"><link rel="prefetch" href="/blog/assets/js/96.3253de50.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.7a0018a6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/engineering/" class="nav-link">
+  前端工程化
+</a></div><div class="nav-item"><a href="/blog/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/blog/element/" class="nav-link">
+  Element-UI 源码分析
+</a></div><div class="nav-item"><a href="/blog/vue-cli/" class="nav-link">
+  vue-cli 源码分析
+</a></div><div class="nav-item"><a href="/blog/css/" class="nav-link">
+  css 相关
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  html 相关
+</a></div><div class="nav-item"><a href="/blog/nodejs/" class="nav-link">
+  node.js 相关
+</a></div><div class="nav-item"><a href="/blog/wxMini/" class="nav-link">
+  小程序 相关
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Javascript" class="dropdown-title"><span class="title">Javascript</span> <span class="arrow down"></span></button> <button type="button" aria-label="Javascript" class="mobile-dropdown-title"><span class="title">Javascript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          你不知道的js 读后感
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/dontKnowJs/" class="nav-link">
+  上卷
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link">
+  基础语法
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/git/" class="nav-link">
+  git
+</a></div><div class="nav-item"><a href="/blog/server/" class="nav-link router-link-active">
+  服务器运维
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="KKB 学习记录" class="dropdown-title"><span class="title">KKB 学习记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="KKB 学习记录" class="mobile-dropdown-title"><span class="title">KKB 学习记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue-router/" class="nav-link">
+  vue-router 实现原理
+</a></li><li class="dropdown-item"><!----> <a href="/blog/vuex/" class="nav-link">
+  vuex 实现原理
+</a></li><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue 源码分析
+</a></li></ul></div></div> <a href="https://github.com/summerstarlee/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/engineering/" class="nav-link">
+  前端工程化
+</a></div><div class="nav-item"><a href="/blog/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/blog/element/" class="nav-link">
+  Element-UI 源码分析
+</a></div><div class="nav-item"><a href="/blog/vue-cli/" class="nav-link">
+  vue-cli 源码分析
+</a></div><div class="nav-item"><a href="/blog/css/" class="nav-link">
+  css 相关
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  html 相关
+</a></div><div class="nav-item"><a href="/blog/nodejs/" class="nav-link">
+  node.js 相关
+</a></div><div class="nav-item"><a href="/blog/wxMini/" class="nav-link">
+  小程序 相关
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Javascript" class="dropdown-title"><span class="title">Javascript</span> <span class="arrow down"></span></button> <button type="button" aria-label="Javascript" class="mobile-dropdown-title"><span class="title">Javascript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          你不知道的js 读后感
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/dontKnowJs/" class="nav-link">
+  上卷
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link">
+  基础语法
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/git/" class="nav-link">
+  git
+</a></div><div class="nav-item"><a href="/blog/server/" class="nav-link router-link-active">
+  服务器运维
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="KKB 学习记录" class="dropdown-title"><span class="title">KKB 学习记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="KKB 学习记录" class="mobile-dropdown-title"><span class="title">KKB 学习记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue-router/" class="nav-link">
+  vue-router 实现原理
+</a></li><li class="dropdown-item"><!----> <a href="/blog/vuex/" class="nav-link">
+  vuex 实现原理
+</a></li><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue 源码分析
+</a></li></ul></div></div> <a href="https://github.com/summerstarlee/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/blog/server/" aria-current="page" class="sidebar-link">服务器运维相关</a></li><li><a href="/blog/server/server-link.html" class="sidebar-link">使用 ssh-config 快速登录</a></li><li><a href="/blog/server/window-kill-port.html" class="sidebar-link">windows 查看端口并 kill 某个进程</a></li><li><a href="/blog/server/nginx-install.html" class="sidebar-link">CentOS 使用 yum 安装 nginx</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="github-action-实现-github-pages-和-私服-自动部署"><a href="#github-action-实现-github-pages-和-私服-自动部署" class="header-anchor">#</a> github Action 实现 GitHub Pages 和 私服 自动部署</h1> <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e28eae46f5fe437793ba602edea23fdf~tplv-k3u1fbpfcp-zoom-1.image" alt="">
+github action 是基于 GitHub 的持续集成服务。 他提供一台服务器实例，再这个实例中允许通过 actions 来执行一个或者多个命令， 从而达到像抓取代码、运行测试、登录远程服务器、发布项目等功能。</p> <h2 id="github-组成"><a href="#github-组成" class="header-anchor">#</a> gitHub 组成</h2> <ol><li><p>workflow (工作流): 每个需要单独运行的集成服务，就是一个 workflow</p></li> <li><p>job (任务)： 一个 workflow 由一个或多个 jobs 构成，含义是一次持续集成的运行，可以完成多个任务。</p></li> <li><p>step (步骤)：每个 job 由多个 step 构成，一步步完成。</p></li> <li><p>action (动作)：每个 step 可以依次执行一个或多个命令（action）。</p></li></ol> <h2 id="git-action-文件-workflow"><a href="#git-action-文件-workflow" class="header-anchor">#</a> git action 文件 - workflow</h2> <p>github actions 的配置文件是 workflow 文件, 存放在仓库中的 .gihub/workflows 目录中。</p> <p>根据需求， workflow 可以创建多个。 workflow 规定使用 YAML 格式，文件名可以根据集成服务的功能任意取， 但是后缀必须使用 .yml。 GitHub 只要发现 .github/workflows 目录中存在就会自动运行这些文件。</p> <h2 id="常见的-workflow-配置字段"><a href="#常见的-workflow-配置字段" class="header-anchor">#</a> 常见的 workflow 配置字段</h2> <h3 id="name"><a href="#name" class="header-anchor">#</a> name</h3> <p>workflow 的名称。如果省略该字段，默认为当前 workflow 的文件名。</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> GitHub Actions Demo
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="on"><a href="#on" class="header-anchor">#</a> on</h3> <p>定义触发事件的git hook, 可以是单个 hook 名称或多个</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token comment"># push  时触发事件</span>
+on<span class="token punctuation">:</span>push
+
+<span class="token comment"># push 和 pull 时都出发事件</span>
+<span class="token key atrule">on</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>push<span class="token punctuation">,</span> pull_request<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>定义事件时，还可以限定分支和标签</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> master
+    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="jobs"><a href="#jobs" class="header-anchor">#</a> jobs</h3> <p>workflow 文件的主体是jobs字段，表示要执行的一项或多项任务。</p> <p>jobs字段里面，需要写出每一项任务的job_id，具体名称自定义。job_id里面的name字段是任务的说明。</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token comment"># 定义的第一个任务 </span>
+  <span class="token key atrule">my_first_job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> My first job
+  
+  <span class="token comment"># 定义的第二个任务</span>
+  <span class="token key atrule">my_second_job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> My second job
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><em><strong>jobs.&lt;job_id&gt;.needs</strong></em>
+needs字段指定当前任务的依赖关系，即运行顺序。</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">job1</span><span class="token punctuation">:</span>
+  <span class="token key atrule">job2</span><span class="token punctuation">:</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> job1
+  <span class="token key atrule">job3</span><span class="token punctuation">:</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>job1<span class="token punctuation">,</span> job2<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>上面代码中，job1必须先于job2完成，而job3等待job1和job2的完成才能运行。因此，这个 workflow 的运行顺序依次为：job1、job2、job3。</p> <p><em><strong>jobs.&lt;job_id&gt;.runs-on</strong></em>
+runs-on 字段指定运行所需要的虚拟机环境，他是必填字段，目前可以选择：</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code>ubuntu<span class="token punctuation">-</span>latest，ubuntu<span class="token punctuation">-</span>18.04或ubuntu<span class="token punctuation">-</span><span class="token number">16.04</span>
+
+windows<span class="token punctuation">-</span>latest，windows<span class="token punctuation">-</span>2019或windows<span class="token punctuation">-</span><span class="token number">2016</span>
+
+macOS<span class="token punctuation">-</span>latest或macOS<span class="token punctuation">-</span><span class="token number">10.14</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><em><strong>jobs.&lt;job_id&gt;.steps</strong></em></p> <p>steps字段指定每个 Job 的运行步骤，可以包含一个或多个步骤。每个步骤都可以指定以下三个字段。</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code>jobs.&lt;job_id<span class="token punctuation">&gt;</span>.steps.name：步骤名称。
+jobs.&lt;job_id<span class="token punctuation">&gt;</span>.steps.run：该步骤运行的命令。
+jobs.&lt;job_id<span class="token punctuation">&gt;</span>.steps.use：该步骤运行的 action。
+jobs.&lt;job_id<span class="token punctuation">&gt;</span>.steps.env：该步骤所需的环境变量。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><blockquote><p>每一个 steps 中必须存在一个 run 或者 action。</p></blockquote> <p>一个完整的 workflow 文件如下：</p> <p><em><strong>。github/workflows/main.yml</strong></em></p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> first github action workflow
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> master
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">first-job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> my first job demo
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> first<span class="token punctuation">-</span>action
+      <span class="token key atrule">run</span><span class="token punctuation">:</span>  <span class="token punctuation">|</span><span class="token scalar string">
+        echo hello world</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> github actions build and deploy gh<span class="token punctuation">-</span>pages
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> master
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">build_and_deploy</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout 🛎️
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2.3.1
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">persist-credentials</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+      
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install and Build 🔧
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          npm install
+          npm run build</span>
+        
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy 🚀
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> JamesIves/github<span class="token punctuation">-</span>pages<span class="token punctuation">-</span>deploy<span class="token punctuation">-</span>action@3.5.7
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">GITHUB_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GITHUB_TOKEN <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token key atrule">BRANCH</span><span class="token punctuation">:</span> gh<span class="token punctuation">-</span>pages 
+          <span class="token key atrule">FOLDER</span><span class="token punctuation">:</span> dist 
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><div class="language-yml line-numbers-mode"><pre class="language-yml"><code>		
+<span class="token key atrule">name</span><span class="token punctuation">:</span> newBlog deploy shell
+
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span> 
+      <span class="token punctuation">-</span> new
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">setup-build-publish-deploy</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup<span class="token punctuation">,</span> Build<span class="token punctuation">,</span> Publish<span class="token punctuation">,</span> and Deploy
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout
+      <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+      <span class="token key atrule">with</span><span class="token punctuation">:</span>
+        <span class="token key atrule">persist-credentials</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install and build 🔧
+      <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+        yarn 
+        yarn build</span>
+    
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy to Server 🚀
+      <span class="token key atrule">uses</span><span class="token punctuation">:</span> easingthemes/ssh<span class="token punctuation">-</span>deploy@v2.1.5
+      <span class="token key atrule">env</span><span class="token punctuation">:</span> 
+        <span class="token key atrule">SSH_PRIVATE_KEY</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.SSH_PRIVATE_KEY <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token key atrule">SOURCE</span><span class="token punctuation">:</span> <span class="token string">&quot;build/&quot;</span>
+        <span class="token key atrule">REMOTE_HOST</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.REMOTE_HOST <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token key atrule">REMOTE_USER</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.REMOTE_USER <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token key atrule">TARGET</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.REMOTE_TARGET <span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/27/2020, 9:29:38 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.133b3ecd.js" defer></script><script src="/blog/assets/js/2.571e916c.js" defer></script><script src="/blog/assets/js/58.01841866.js" defer></script>
+  </body>
+</html>
