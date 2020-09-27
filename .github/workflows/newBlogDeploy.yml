@@ -32,12 +32,7 @@ jobs:
 
         persist-credentials: false
 
-        
-
-    - name: Install and build 🔧
-
+    
+    - name: Deploy to Server 🚀
       run: |
-
-        yarn 
-
-        yarn build
+        echo ${{secrets.SSH_PRIVATE_KEY}}
