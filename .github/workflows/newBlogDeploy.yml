@@ -32,10 +32,16 @@ jobs:
 
         persist-credentials: false
 
+    - name: Install and build 🔧
+      run: |
+        yarn 
+        yarn build
     
     - name: Deploy to Server 🚀
+      users: easingthemes/ssh-deploy@v2.1.5
       env: 
-        DEMO: hi demo
-      run: |
-        echo $DEMO
-        echo ${{ secrets.USER_NAME }}
+        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        SOURCE: "build/"
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        TARGET: ${{ secrets.REMOTE_TARGET }}
