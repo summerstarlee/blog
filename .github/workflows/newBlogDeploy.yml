@@ -1,0 +1,17 @@
+name: newBlog deploy shell
+
+on:
+  push:
+    branches: 
+      - new
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+   
