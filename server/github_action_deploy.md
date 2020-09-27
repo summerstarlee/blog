@@ -117,7 +117,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      name: first-action
+    - name: first-action
       run:  |
         echo hello world
 ```
