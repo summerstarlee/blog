@@ -38,4 +38,4 @@ jobs:
         DEMO: hi demo
       run: |
         echo $DEMO
-        echo ${{ secrets.SSH_PRIVATE_KEY }}
+        echo ${{ secrets.USER_NAME }}
