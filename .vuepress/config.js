@@ -127,7 +127,8 @@ module.exports = {
         'comma',
         'context',
         "module-import",
-        "function"
+        "function",
+        'plus_sign'
       ],
       '/dontKnowJs/': [
         ""
