@@ -90,7 +90,7 @@ const event = new MouseEvent('myClick', {
 </script>
 ```
 
-## 自定义时间的执行顺序
+## 自定义事件的执行顺序
 ```html
 <button id="menu">Menu (click me)</button>
 <script>
