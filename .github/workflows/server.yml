@@ -1,4 +1,5 @@
-name: newBlog deploy shell
+name: blog deploy shell
+
 
 
 on:
@@ -7,7 +8,7 @@ on:
 
     branches: 
 
-      - new
+      - master
 
 
 jobs:
@@ -19,15 +20,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-
-
     - name: Checkout
-
       uses: actions/checkout@v2
-
       with:
-
         persist-credentials: false
 
     - name: Install and build 🔧
@@ -39,7 +34,7 @@ jobs:
       uses: easingthemes/ssh-deploy@v2.1.5
       env: 
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SOURCE: "build/"
+        SOURCE: "dist/"
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: ${{ secrets.REMOTE_TARGET }}
+        TARGET: ${{ secrets.REMOTE_TARGET_BLOG }}
