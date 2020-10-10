@@ -3,7 +3,6 @@ module.exports = {
   title: "",
   description: "Welcome Star Lee's blog !",
   dest: 'dist',
-  base: '/blog/',
   head: [
       ['link', { rel: 'icon', href: '/android-icon-36x36.png' }]
   ], 
