@@ -1,3 +1,4 @@
 import React from 'react'
+import Layout from './layout/Layout'
 
-export default () => <div>App container</div>
+export default () => <Layout />
