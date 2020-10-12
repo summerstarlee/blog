@@ -127,7 +127,8 @@ module.exports = {
         'context',
         "module-import",
         "function",
-        'plus_sign'
+        'plus_sign',
+        'prototype_link'
       ],
       '/dontKnowJs/': [
         ""
