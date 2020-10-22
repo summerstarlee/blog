@@ -42,5 +42,34 @@ noBracketSpacing: true      // 大括号的首位需要加空格
 arrowParens: always         // 箭头函数，只有一个参数的时候，也需要括号 
 ```
 
+## create-react-app 添加 prettier 配置
+默认情况下， `react-react-app` 中只添加了 `eslint` 的配置。 `cra` 项目中添加 `prettier` 的步骤如下:
+1. 安装依赖
+```bash
+yarn prettier eslint-plugin-prettier eslint-config-prettier -D
+```
+2. 修改 `.eslintrc` 文件
+```json
+{
+  "extends": [
+    "react-app",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": 2
+  }
+}
+```
+3. 添加 `.prettierrc` 文件
+```json
+{
+  "semi": false,
+  "singleQuote": true,
+  "arrowParens": "avoid"
+}
+```
 
 

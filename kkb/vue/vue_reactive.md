@@ -18,4 +18,6 @@
 ## 源码实现
 
 在上篇 [Vue 源码阅读第二步 - Vue 实例化流程分析](https://juejin.im/post/6873739621823184903#heading-5) 中讲到在生成实例执行到 `_init` 时会调用 `initState` 方法, 他会初始化 data、props 等,  这里也执行了 Vue 响应的逻辑。
- 
+
+
+
