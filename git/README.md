@@ -9,7 +9,7 @@ git remote rm origin
 git remote add origin [url]
 ```
 
-2. 设置 git 仓库的邮箱和用户名
+2. 获取 git 配置信息
 
 ```bash
 # 查看配置信息 git config 环境 --list
@@ -18,6 +18,12 @@ git config --system --list
 # 查看用户配置信息
 git config --global --list
 # 查看本仓库配置
-git config --local --list
- 
+git config --local --list 
+```
+
+3. 设置 git 配置信息
+```bash
+# 修改用户级别的配置
+git config --global user.name [username]
+git config --global user.email [email]
 ```

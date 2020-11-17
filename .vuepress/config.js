@@ -111,14 +111,15 @@ module.exports = {
         'closeIssues',
         'repassword',
         'git-chached',
-        'muti_user'
+        'muti_user',
+        'github_action_deploy'
       ],
       '/server/': [
         '',
         'server-link',
         'window-kill-port',
         'nginx-install',
-        'github_action_deploy'
+        'shell'
       ],
       '/javascript/': [
         'this',

@@ -1,4 +1,5 @@
-name: newBlog deploy shell
+# 使用新的域名部署  暂时不用
+name: newBlog deploy shell 
 
 
 on:
@@ -10,36 +11,36 @@ on:
       - new
 
 
-jobs:
+# jobs:
 
-  setup-build-publish-deploy:
+#   setup-build-publish-deploy:
 
-    name: Setup, Build, Publish, and Deploy
+#     name: Setup, Build, Publish, and Deploy
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
+#     steps:
 
 
 
-    - name: Checkout
+#     - name: Checkout
 
-      uses: actions/checkout@v2
+#       uses: actions/checkout@v2
 
-      with:
+#       with:
 
-        persist-credentials: false
+#         persist-credentials: false
 
-    - name: Install and build 🔧
-      run: |
-        yarn 
-        yarn build
+#     - name: Install and build 🔧
+#       run: |
+#         yarn 
+#         yarn build
     
-    - name: Deploy to Server 🚀
-      uses: easingthemes/ssh-deploy@v2.1.5
-      env: 
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SOURCE: "build/"
-        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-        REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: ${{ secrets.REMOTE_TARGET }}
+#     - name: Deploy to Server 🚀
+#       uses: easingthemes/ssh-deploy@v2.1.5
+#       env: 
+#         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+#         SOURCE: "build/"
+#         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+#         REMOTE_USER: ${{ secrets.REMOTE_USER }}
+#         TARGET: ${{ secrets.REMOTE_TARGET }}

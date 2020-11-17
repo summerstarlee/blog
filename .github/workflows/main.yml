@@ -1,4 +1,5 @@
- name: github actions build and deploy gh-pages
+ # 部署到 GitHub page  暂时先不用
+ name: github actions build and deploy gh-pages 
  on:
    push: 
      branches:
