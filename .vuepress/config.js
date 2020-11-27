@@ -77,10 +77,6 @@ module.exports = {
             link: '/vue/'
           }
         ]
-      },
-      {
-        text: 'youzan',
-        link: '/youzan/'
       }
     ], 
     sidebar: {
