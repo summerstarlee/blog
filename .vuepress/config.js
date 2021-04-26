@@ -164,7 +164,9 @@ module.exports = {
         "",
         "css_box",
         "pseudoElements",
-        "grid"
+        "grid", 
+        "sass",
+        "text"
       ],
       '/wxMini/': [
         "",
