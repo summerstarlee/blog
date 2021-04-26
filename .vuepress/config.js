@@ -97,7 +97,8 @@ module.exports = {
         'repassword',
         'git-chached',
         'muti_user',
-        'github_action_deploy'
+        'github_action_deploy',
+        'back'
       ],
       '/server/': [
         '',

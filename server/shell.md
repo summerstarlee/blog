@@ -13,6 +13,7 @@ fi
 ```
 
 * 判断文件是否存在
+
 ```shell
 if [ -f "data/filename" ];then
 echo "文件存在"
@@ -22,6 +23,7 @@ fi
 ```
 
 * 其他文件比较形式
+
 ```
 -e 判断对象是否存在
 -d 判断对象是否存在， 并且为目录
@@ -39,7 +41,9 @@ fi
 ```
 
 ## shell 读取键盘输入 read
+
 `read` 从标准输入读取数值， 命令语法：
+
 ```bash
 read [-options] [variable]
 ```
@@ -54,4 +58,12 @@ echo "$num is number"
 else
  echo "num is not number"
 fi
+```
+
+## linux 查看版本
+
+```shell
+cat /etc/issue  
+# 或者
+cat /etc/redhat-release
 ```
