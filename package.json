@@ -1,12 +1,15 @@
 {
-  "name": "starlee-blog",
-  "version": "1.3.0",
-  "description": "Welcome Star lee's blog",
-  "devDependencies": {
-    "vuepress": "^1.5.3"
-  },
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "starlee's blog",
+  "main": "index.js",
+  "author": "StarLee",
+  "license": "MIT",
   "scripts": {
     "dev": "vuepress dev .",
     "build": "vuepress build ."
+  },
+  "devDependencies": {
+    "vuepress": "^1.8.2"
   }
 }
