@@ -58,8 +58,8 @@ module.exports = {
         link: '/git/'
       },
       {
-        text: '服务器运维',
-        link: '/server/'
+        text: '操作系统',
+        link: '/OS/'
       },
       {
         text: 'KKB 学习记录',
@@ -100,7 +100,7 @@ module.exports = {
         'github_action_deploy',
         'back'
       ],
-      '/server/': [
+      '/OS/': [
         '',
         'server-link',
         'window-kill-port',
